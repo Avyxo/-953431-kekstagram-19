@@ -1,1 +1,3 @@
-# Coinbase Comme
+# Coinbase Commerce Prestashop Payment Module
+
+# I
