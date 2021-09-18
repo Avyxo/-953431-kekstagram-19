@@ -1,3 +1,4 @@
 # Coinbase Commerce Prestashop Payment Module
 
-# I
+# Installation
+1. Signup for an account at [Coinba
