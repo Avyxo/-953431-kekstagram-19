@@ -2,4 +2,4 @@
 
 # Installation
 1. Signup for an account at [Coinbase Commerce](https://commerce.coinbase.com/).
-2. Create an API Key by going t
+2. Create an API Key by going to the Settings tab in the Coinbase Commerce da
