@@ -8,3 +8,4 @@
 5. Click Configure to go to the settings page of the plugin. Set the API Key, Shared Secret Key from Coinbase Commerce Dashboard.
 6. Copy webhook url from settings page of the plugin to Coinbase Commerce DashBoard Settings. 
 
+**NOTE:** There is a setting for "Unsafe" mode o
