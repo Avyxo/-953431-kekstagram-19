@@ -9,4 +9,4 @@
 6. Copy webhook url from settings page of the plugin to Coinbase Commerce DashBoard Settings. 
 
 **NOTE:** There is a setting for "Unsafe" mode on the plugins settings page. This should never be set to "Enabled" on a production website. 
-It is only used for making testing easier during development, since it will deactivate 
+It is only used for making testing easier during development, since it will deactivate any validation of the requests that is send to th
