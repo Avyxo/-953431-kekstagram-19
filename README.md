@@ -13,4 +13,4 @@ It is only used for making testing easier during development, since it will deac
 will allow the developer to emulate POST requests to the webhook without generating the `X-CC-Webhook-Signature` header.
 
 # Localization
-All text 
+All text strings, labels and descriptions found in the plugin
