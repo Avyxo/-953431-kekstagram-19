@@ -5,4 +5,5 @@ if (!defined('_PS_VERSION_')) {
 }
 
 /**
- * For testing purposes we wrap the Conf
+ * For testing purposes we wrap the Configuration in a wrapper class
+ * so that we can e
