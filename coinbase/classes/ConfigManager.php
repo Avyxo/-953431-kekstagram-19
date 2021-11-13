@@ -5,4 +5,4 @@ if (!defined('_PS_VERSION_')) {
 }
 
 /**
- * F
+ * For testing purposes we wrap the Conf
