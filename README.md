@@ -18,4 +18,4 @@ International/Translations tab in the Prestashop Back Office.
 
 # Integrate with other e-commerce platforms
 
-[Coinbase Comm
+[Coinbase Commerce Integrations](https://commerce.coinbase.com/integrate)
