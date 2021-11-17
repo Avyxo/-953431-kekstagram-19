@@ -10,4 +10,6 @@ if (!defined('_PS_VERSION_')) {
  */
 class ConfigManager
 {
-    publi
+    public function addFields()
+    {
+        $or
