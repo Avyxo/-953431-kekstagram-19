@@ -6,4 +6,8 @@ if (!defined('_PS_VERSION_')) {
 
 /**
  * For testing purposes we wrap the Configuration in a wrapper class
- * so that we can e
+ * so that we can easily mock it.
+ */
+class ConfigManager
+{
+    publi
