@@ -12,4 +12,4 @@ class ConfigManager
 {
     public function addFields()
     {
-        $or
+        $orderNew = $this->createOrderStatus('Coinbase aw
