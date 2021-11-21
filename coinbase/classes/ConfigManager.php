@@ -13,4 +13,7 @@ class ConfigManager
     public function addFields()
     {
         $orderNew = $this->createOrderStatus('Coinbase awaiting status', '#D0CA64');
-        $orderPending = $this->createOrderStatus('Coinbase pending stat
+        $orderPending = $this->createOrderStatus('Coinbase pending status', '#007FFF');
+
+        if (
+            Configuratio
