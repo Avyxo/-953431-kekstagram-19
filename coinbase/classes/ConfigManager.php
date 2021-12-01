@@ -16,4 +16,4 @@ class ConfigManager
         $orderPending = $this->createOrderStatus('Coinbase pending status', '#007FFF');
 
         if (
-            Configuratio
+            Configuration::updateValue('COINBASE_API_KEY', null)
