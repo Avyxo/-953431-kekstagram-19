@@ -17,4 +17,5 @@ class ConfigManager
 
         if (
             Configuration::updateValue('COINBASE_API_KEY', null)
-            && Configuration::updateValue('
+            && Configuration::updateValue('COINBASE_SANDBOX', null)
+            && Configuration:
