@@ -19,4 +19,5 @@ class ConfigManager
             Configuration::updateValue('COINBASE_API_KEY', null)
             && Configuration::updateValue('COINBASE_SANDBOX', null)
             && Configuration::updateValue('COINBASE_SHARED_SECRET', null)
-            && Configuration::updateValue
+            && Configuration::updateValue('COINBASE_NEW', $orderNew->id)
+            
