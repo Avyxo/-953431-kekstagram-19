@@ -26,3 +26,6 @@ class ConfigManager
         }
 
         return false;
+    }
+
+    public function createOrderS
