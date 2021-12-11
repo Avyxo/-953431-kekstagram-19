@@ -22,4 +22,7 @@ class ConfigManager
             && Configuration::updateValue('COINBASE_NEW', $orderNew->id)
             && Configuration::updateValue('COINBASE_PENDING', $orderPending->id)
         ) {
-      
+            return true;
+        }
+
+        return false;
