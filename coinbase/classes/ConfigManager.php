@@ -20,4 +20,6 @@ class ConfigManager
             && Configuration::updateValue('COINBASE_SANDBOX', null)
             && Configuration::updateValue('COINBASE_SHARED_SECRET', null)
             && Configuration::updateValue('COINBASE_NEW', $orderNew->id)
-            && Configuration::updateValue('COINBASE_P
+            && Configuration::updateValue('COINBASE_PENDING', $orderPending->id)
+        ) {
+      
