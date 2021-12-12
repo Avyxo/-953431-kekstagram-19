@@ -31,4 +31,6 @@ class ConfigManager
     public function createOrderStatus($name, $color)
     {
         $order = new OrderState();
-        $order->name = array_fill(0
+        $order->name = array_fill(0, 10, $name);
+        $order->send_email = 0;
+    
