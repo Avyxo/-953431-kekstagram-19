@@ -30,4 +30,5 @@ class ConfigManager
 
     public function createOrderStatus($name, $color)
     {
-        $order = new Ord
+        $order = new OrderState();
+        $order->name = array_fill(0
