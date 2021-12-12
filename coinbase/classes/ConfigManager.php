@@ -28,4 +28,6 @@ class ConfigManager
         return false;
     }
 
-    public function createOrderS
+    public function createOrderStatus($name, $color)
+    {
+        $order = new Ord
