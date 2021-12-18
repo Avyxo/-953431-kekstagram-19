@@ -34,4 +34,5 @@ class ConfigManager
         $order->name = array_fill(0, 10, $name);
         $order->send_email = 0;
         $order->invoice = 0;
-     
+        $order->color = $color;
+        $order->un
