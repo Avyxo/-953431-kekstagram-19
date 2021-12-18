@@ -37,3 +37,6 @@ class ConfigManager
         $order->color = $color;
         $order->unremovable = false;
         $order->logable = 0;
+        $order->add();
+
+        return $o
