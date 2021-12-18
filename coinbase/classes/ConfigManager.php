@@ -35,4 +35,5 @@ class ConfigManager
         $order->send_email = 0;
         $order->invoice = 0;
         $order->color = $color;
-        $order->un
+        $order->unremovable = false;
+        $order->logable = 0;
