@@ -39,4 +39,7 @@ class ConfigManager
         $order->logable = 0;
         $order->add();
 
-        return $o
+        return $order;
+    }
+
+    public function deleteFi
