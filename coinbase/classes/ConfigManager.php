@@ -44,4 +44,4 @@ class ConfigManager
 
     public function deleteFields()
     {
-        $orderNew = new OrderStat
+        $orderNew = new OrderState(Configuration::get('COINBASE_NEW'));
