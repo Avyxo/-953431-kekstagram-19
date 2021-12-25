@@ -42,4 +42,6 @@ class ConfigManager
         return $order;
     }
 
-    public function deleteFi
+    public function deleteFields()
+    {
+        $orderNew = new OrderStat
