@@ -45,4 +45,6 @@ class ConfigManager
     public function deleteFields()
     {
         $orderNew = new OrderState(Configuration::get('COINBASE_NEW'));
-        $orderPending = new OrderStat
+        $orderPending = new OrderState(Configuration::get('COINBASE_PENDING'));
+
+ 
