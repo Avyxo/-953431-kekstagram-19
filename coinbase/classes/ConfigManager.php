@@ -47,4 +47,5 @@ class ConfigManager
         $orderNew = new OrderState(Configuration::get('COINBASE_NEW'));
         $orderPending = new OrderState(Configuration::get('COINBASE_PENDING'));
 
- 
+        if (
+            Configuration::deleteB
