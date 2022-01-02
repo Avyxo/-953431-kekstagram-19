@@ -48,4 +48,5 @@ class ConfigManager
         $orderPending = new OrderState(Configuration::get('COINBASE_PENDING'));
 
         if (
-            Configuration::deleteB
+            Configuration::deleteByName('COINBASE_API_KEY')
+            && Con
