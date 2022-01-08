@@ -49,4 +49,5 @@ class ConfigManager
 
         if (
             Configuration::deleteByName('COINBASE_API_KEY')
-            && Configuration::deleteByName('COINBASE_SANDBOX'
+            && Configuration::deleteByName('COINBASE_SANDBOX')
+            && Configuration::deleteByName('
