@@ -51,4 +51,7 @@ class ConfigManager
             Configuration::deleteByName('COINBASE_API_KEY')
             && Configuration::deleteByName('COINBASE_SANDBOX')
             && Configuration::deleteByName('COINBASE_SHARED_SECRET')
-            && $orderNew-
+            && $orderNew->delete()
+            && $orderPending->delete()
+        ) {
+ 
