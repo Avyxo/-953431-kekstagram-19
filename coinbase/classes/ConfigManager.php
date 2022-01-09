@@ -54,4 +54,8 @@ class ConfigManager
             && $orderNew->delete()
             && $orderPending->delete()
         ) {
- 
+            return true;
+        }
+
+        return false;
+   
