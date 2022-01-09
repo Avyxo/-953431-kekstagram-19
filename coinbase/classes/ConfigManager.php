@@ -50,4 +50,5 @@ class ConfigManager
         if (
             Configuration::deleteByName('COINBASE_API_KEY')
             && Configuration::deleteByName('COINBASE_SANDBOX')
-            && Configuration::deleteByName('
+            && Configuration::deleteByName('COINBASE_SHARED_SECRET')
+            && $orderNew-
