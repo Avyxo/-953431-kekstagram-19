@@ -58,4 +58,5 @@ class ConfigManager
         }
 
         return false;
-   
+    }
+}
