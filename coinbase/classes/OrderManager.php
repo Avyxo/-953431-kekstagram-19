@@ -46,3 +46,5 @@ class OrderManager
     public static function getCartTotal($cart)
     {
         return $cart->getOrderTotal(true, Cart::BOTH);
+    }
+}
