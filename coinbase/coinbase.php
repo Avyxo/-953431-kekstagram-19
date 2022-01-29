@@ -46,3 +46,35 @@ class Coinbase extends PaymentModule
             !parent::install() ||
             !$this->registerHook('payment') ||
             !$this->registerHook('paymentOptions') ||
+            !$this->registerHook('paymentReturn') ||
+            !$this->configManager->addFields()
+        ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Executes when uninstalling the module. Cleanup DB fields
+     * and raise error if something goes wrong.
+     */
+    public function uninstall()
+    {
+        if (!parent::uninstall() ||
+            !$this->configManager->deleteFields()
+        ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Hook in to the list of payment options on checkout page.
+     * @return PaymentOption[]
+     */
+    public function hookPaymentOptions($params)
+    {
+        if (!$this->active) {
+            return;
+        }
