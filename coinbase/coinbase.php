@@ -78,3 +78,50 @@ class Coinbase extends PaymentModule
         if (!$this->active) {
             return;
         }
+        $paymentOption = new \PrestaShop\PrestaShop\Core\Payment\PaymentOption();
+        $paymentOption->setCallToActionText($this->l('Coinbase Commerce'))
+            ->setAction($this->context->link->getModuleLink($this->name, 'process', array(), true))
+            ->setAdditionalInformation($this->context->smarty->fetch('module:coinbase/views/templates/front/payment_infos.tpl'))
+            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/payment.png'));
+        $paymentOptions = [$paymentOption];
+
+        return $paymentOptions;
+    }
+
+    public function hookPayment($params)
+    {
+        if (!$this->active)
+            return;
+
+        $this->smarty->assign(array(
+            'this_path' => $this->_path,
+            'this_path_coinbase' => $this->_path,
+            'this_path_ssl' => Tools::getShopDomainSsl(true, true).__PS_BASE_URI__.'modules/'.$this->name.'/'
+        ));
+
+        return $this->display(__FILE__, 'payment.tpl');
+    }
+
+    public function hookDisplayPaymentEU($params)
+    {
+
+        $payment_options = array(
+            'cta_text' => $this->l('Coinbase Commerce'),
+            'logo' => Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/payment.png'),
+            'action' => $this->context->link->getModuleLink($this->name, 'process', array(), true)
+        );
+
+        return $payment_options;
+    }
+
+    public function hookPaymentReturn()
+    {
+    }
+
+    /**
+     * Module Configuration page controller. Handle the form POST request
+     * and outputs the form.
+     */
+    public function getContent()
+    {
+        $output = null;
