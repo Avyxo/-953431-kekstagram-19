@@ -171,3 +171,47 @@ class Coinbase extends PaymentModule
                     'name' => 'COINBASE_SHARED_SECRET',
                     'size' => 50,
                     'required' => false
+                ],
+                [
+                    'type' => 'radio',
+                    'label' => $this->l('Activate Unsafe Mode'),
+                    'desc' => $this->l('Do not validate POST requests to webhooks, this is useful for development and testing (DO NOT USE IN PRODUCTION!)'),
+                    'name' => 'COINBASE_SANDBOX',
+                    'required' => false,
+                    'is_bool' => true,
+                    'values' => [
+                        [
+                            'id' => 'enabled',
+                            'value' => 1,
+                            'label' => $this->l('Enable')
+                        ],
+                        [
+                            'id' => 'disabled',
+                            'value' => 0,
+                            'label' => $this->l('Disable')
+                        ]
+                    ]
+                ]
+            ],
+            'submit' => [
+                'title' => $this->l('Save'),
+                'class' => 'btn btn-default pull-right'
+            ]
+        ];
+
+        $helper = new HelperForm();
+        $helper->submit_action = 'update_settings_' . $this->name;
+
+        // Sets current value from DB to the form.
+        $helper->fields_value['COINBASE_API_KEY'] = Configuration::get('COINBASE_API_KEY');
+        $helper->fields_value['COINBASE_SANDBOX'] = Configuration::get('COINBASE_SANDBOX');
+        $helper->fields_value['COINBASE_SHARED_SECRET'] = Configuration::get('COINBASE_SHARED_SECRET');
+
+        return $helper->generateForm($fields_form);
+    }
+
+    public function setConfigManager($manager)
+    {
+        $this->configManager = $manager;
+    }
+}
