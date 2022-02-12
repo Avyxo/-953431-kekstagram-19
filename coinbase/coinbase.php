@@ -125,3 +125,49 @@ class Coinbase extends PaymentModule
     public function getContent()
     {
         $output = null;
+
+        if (Tools::isSubmit('update_settings_' . $this->name)) {
+            Configuration::updateValue('COINBASE_API_KEY', Tools::getValue('COINBASE_API_KEY'));
+            Configuration::updateValue('COINBASE_SANDBOX', Tools::getValue('COINBASE_SANDBOX'));
+            Configuration::updateValue('COINBASE_SHARED_SECRET', Tools::getValue('COINBASE_SHARED_SECRET'));
+            $output .= $this->displayConfirmation($this->l('Settings updated'));
+        }
+
+        return $output . $this->displayForm();
+    }
+
+    /**
+     * Generates a HTML Form that is used on the module configuration page.
+     */
+    public function displayForm()
+    {
+
+        $fields_form[0]['form'] = [
+            'legend' => [
+                'title' => $this->l('Settings'),
+            ],
+            'description' => $this->l('To use this plugin, you must first sign up for an account and create an API Key at ')
+                . '<a href="https://commerce.coinbase.com/" target="_blank" title="Coinbase Commerce">Coinbase Commerce</a>.',
+            'input' => [
+                [
+                    'type' => 'text',
+                    'label' => $this->l('API Key'),
+                    'desc' => $this->l('You can manage your API keys within the Coinbase Commerce Settings page, available here: ') . '<a href="https://commerce.coinbase.com/dashboard/settings" target="_blank">https://commerce.coinbase.com/dashboard/settings</a>',
+                    'name' => 'COINBASE_API_KEY',
+                    'size' => 50,
+                    'required' => false
+                ],
+                [
+                    'type' => 'text',
+                    'label' => $this->l('Shared Secret'),
+                    'desc' =>
+                        $this->l('Using webhooks allows Coinbase Commerce to send payment confirmation messages to the website. To fill this out:') . '</br>'
+                        . $this->l('1. In your Coinbase Commerce settings page, scroll to the \'Webhook subscriptions\' section') . '</br>'
+                        . $this->l('2. Click \'Add an endpoint\' and paste the following URL: ')
+                        . '<a>' . $this->context->link->getModuleLink($this->name, 'webhook', array(), true) . '</a></br>'
+                        . $this->l('3. Make sure to select "Send me all events", to receive all payment updates') . '</br>'
+                        . $this->l('4. Click "Show shared secret" and paste into the box above.')
+                    ,
+                    'name' => 'COINBASE_SHARED_SECRET',
+                    'size' => 50,
+                    'required' => false
