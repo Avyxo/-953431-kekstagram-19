@@ -3,4 +3,6 @@ if (!defined('_PS_VERSION_')) {
     exit();
 }
 
-class CoinbaseCancelModuleFrontController extends ModuleFrontContr
+class CoinbaseCancelModuleFrontController extends ModuleFrontController
+{
+    public function postPro
