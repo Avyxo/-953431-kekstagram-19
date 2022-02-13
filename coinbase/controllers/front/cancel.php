@@ -3,4 +3,4 @@ if (!defined('_PS_VERSION_')) {
     exit();
 }
 
-clas
+class CoinbaseCancelModuleFrontController extends ModuleFrontContr
