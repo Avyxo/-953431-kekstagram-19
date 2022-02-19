@@ -5,4 +5,6 @@ if (!defined('_PS_VERSION_')) {
 
 class CoinbaseCancelModuleFrontController extends ModuleFrontController
 {
-    public function postPro
+    public function postProcess()
+    {
+        Tools::redirect('index.
