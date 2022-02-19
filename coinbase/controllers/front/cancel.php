@@ -7,4 +7,6 @@ class CoinbaseCancelModuleFrontController extends ModuleFrontController
 {
     public function postProcess()
     {
-        Tools::redirect('index.
+        Tools::redirect('index.php?controller=order&step=1');
+    }
+}
