@@ -5,4 +5,4 @@ if (!defined('_PS_VERSION_')) {
 }
 
 if (defined('_PS_MODULE_DIR_')) {
-    r
+    require_once _PS_MODULE_DIR_ . 'coinbase/clas
