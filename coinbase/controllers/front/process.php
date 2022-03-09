@@ -10,4 +10,4 @@ if (defined('_PS_MODULE_DIR_')) {
     require_once _PS_MODULE_DIR_ . 'coinbase/vendor/CoinbaseSDK/const.php';
 }
 
-class CoinbaseProces
+class CoinbaseProcessModuleFrontController extends ModuleFrontCon
