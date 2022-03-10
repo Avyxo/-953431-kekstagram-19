@@ -14,4 +14,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
 {
     public function postProcess()
     {
-       
+        // Check that payment module is active, to prevent u
