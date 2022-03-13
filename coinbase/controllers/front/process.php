@@ -17,4 +17,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         // Check that payment module is active, to prevent users from 
         // calling this controller when payment method is inactive. 
         if (!$this->isModuleActive()) {
-      
+            die($this->module->l('This payment me
