@@ -18,4 +18,7 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         // calling this controller when payment method is inactive. 
         if (!$this->isModuleActive()) {
             die($this->module->l('This payment method is not available.', 'payment'));
-      
+        }
+
+        $cart = $this->context->cart;
+        
