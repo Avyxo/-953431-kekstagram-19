@@ -24,4 +24,6 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         $customer = new Customer($cart->id_customer);
         $total = OrderManager::getCartTotal($cart);
 
-        $this->module->validateOrder
+        $this->module->validateOrder(
+            $cart->id,
+            Configuration::
