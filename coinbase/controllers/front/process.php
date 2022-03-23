@@ -26,4 +26,6 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
 
         $this->module->validateOrder(
             $cart->id,
-            Configuration::
+            Configuration::get('COINBASE_NEW'),
+            $total,
+          
