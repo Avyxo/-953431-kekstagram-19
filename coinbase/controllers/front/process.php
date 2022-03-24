@@ -30,3 +30,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             $total,
             $this->module->displayName,
             null,
+            null,
+            (int)$cart
