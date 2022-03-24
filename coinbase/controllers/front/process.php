@@ -28,4 +28,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             $cart->id,
             Configuration::get('COINBASE_NEW'),
             $total,
-          
+            $this->module->displayName,
+            null,
