@@ -33,4 +33,7 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             null,
             (int)$cart->id_currency,
             false,
-           
+            $customer->secure_key
+        );
+
+  
