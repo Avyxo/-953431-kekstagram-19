@@ -36,4 +36,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             $customer->secure_key
         );
 
-  
+        $chargeObj = $this->apiCreateCh
