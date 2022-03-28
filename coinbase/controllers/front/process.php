@@ -37,4 +37,8 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         );
 
         $chargeObj = $this->apiCreateCharge($cart);
-        header('Location: ' . $chargeOb
+        header('Location: ' . $chargeObj->hosted_url);
+    }
+
+    /**
+     
