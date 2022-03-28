@@ -36,4 +36,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             $customer->secure_key
         );
 
-        $chargeObj = $this->apiCreateCh
+        $chargeObj = $this->apiCreateCharge($cart);
+        header('Location: ' . $chargeOb
