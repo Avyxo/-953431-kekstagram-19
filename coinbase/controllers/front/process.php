@@ -41,4 +41,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
     }
 
     /**
-     
+     * Check if the current module is an active payment module.
