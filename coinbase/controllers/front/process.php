@@ -46,4 +46,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
     public function isModuleActive()
     {
         $authorized = false;
-        fore
+        foreach (Module::getPaymentModules() as $module) {
+ 
