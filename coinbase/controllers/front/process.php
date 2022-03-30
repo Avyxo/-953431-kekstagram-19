@@ -43,4 +43,7 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
     /**
      * Check if the current module is an active payment module.
      */
-    public function isModule
+    public function isModuleActive()
+    {
+        $authorized = false;
+        fore
