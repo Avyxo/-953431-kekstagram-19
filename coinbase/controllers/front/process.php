@@ -51,4 +51,9 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
                 $authorized = true;
                 break;
             }
-        
+        }
+
+        return $authorized;
+    }
+
+    
