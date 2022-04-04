@@ -56,4 +56,6 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         return $authorized;
     }
 
-    
+    public function apiCreateCharge($cart)
+    {
+        $p
