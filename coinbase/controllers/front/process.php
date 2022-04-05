@@ -58,4 +58,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
 
     public function apiCreateCharge($cart)
     {
-        $p
+        $products = array_map(functio
