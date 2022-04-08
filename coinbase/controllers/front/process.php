@@ -60,4 +60,6 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
     {
         $products = array_map(function ($item) {
             return $item['cart_quantity'] . ' × ' . $item['name'];
-        }, $cart->getProduct
+        }, $cart->getProducts());
+
+        $orderId = method_exists('Order',
