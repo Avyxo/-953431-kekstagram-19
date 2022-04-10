@@ -63,4 +63,8 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         }, $cart->getProducts());
 
         $orderId = method_exists('Order', 'getOrderByCartId') ?
-            Order::getOrderByCartId($cart->id) : Order::getIdBy
+            Order::getOrderByCartId($cart->id) : Order::getIdByCartId($cart->id);
+
+        $chargeData = array(
+            'local_price' => array(
+       
