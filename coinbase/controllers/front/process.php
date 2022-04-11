@@ -67,4 +67,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
 
         $chargeData = array(
             'local_price' => array(
-                'amount' => OrderMa
+                'amount' => OrderManager::getCartTotal($cart),
+                'curre
