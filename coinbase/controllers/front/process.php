@@ -70,4 +70,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
                 'amount' => OrderManager::getCartTotal($cart),
                 'currency' => OrderManager::getCurrencyIsoById($cart->id_currency)
             ),
-            'pricing_
+            'pricing_type' => 'fixed_price',
+            'name
