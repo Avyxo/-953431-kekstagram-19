@@ -71,4 +71,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
                 'currency' => OrderManager::getCurrencyIsoById($cart->id_currency)
             ),
             'pricing_type' => 'fixed_price',
-            'name' => Configuration::get('PS_SHOP_NAME') .
+            'name' => Configuration::get('PS_SHOP_NAME') . ' order #' . $orderId,
+            'description
