@@ -72,4 +72,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             ),
             'pricing_type' => 'fixed_price',
             'name' => Configuration::get('PS_SHOP_NAME') . ' order #' . $orderId,
-            'description
+            'description' => join($products, ', '),
+            'metadata' => [
