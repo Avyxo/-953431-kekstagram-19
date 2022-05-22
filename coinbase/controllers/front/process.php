@@ -75,4 +75,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             'description' => join($products, ', '),
             'metadata' => [
                 METADATA_SOURCE_PARAM => METADATA_SOURCE_VALUE,
-                ME
+                METADATA_INVOICE_ID_PARAM => $orderId,
+  
