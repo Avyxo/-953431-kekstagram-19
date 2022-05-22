@@ -74,4 +74,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             'name' => Configuration::get('PS_SHOP_NAME') . ' order #' . $orderId,
             'description' => join($products, ', '),
             'metadata' => [
-                METADATA_SOURCE_PARAM 
+                METADATA_SOURCE_PARAM => METADATA_SOURCE_VALUE,
+                ME
