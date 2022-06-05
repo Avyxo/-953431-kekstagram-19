@@ -76,4 +76,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             'metadata' => [
                 METADATA_SOURCE_PARAM => METADATA_SOURCE_VALUE,
                 METADATA_INVOICE_ID_PARAM => $orderId,
-                METADATA_CLIENT_ID_P
+                METADATA_CLIENT_ID_PARAM => $cart->id_customer,
+          
