@@ -79,4 +79,4 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
                 METADATA_CLIENT_ID_PARAM => $cart->id_customer,
                 METADATA_CART_ID_PARAM => $cart->id
             ],
-            'redirect_url' => OrderManager::getOrderConfirmationUrl($thi
+            'redirect_url' => OrderManager::getOrderConfirmationUrl($this->context, $cart->id, $this->module->i
