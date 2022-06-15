@@ -83,4 +83,5 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
             'cancel_url' => OrderManager::getOrderCancelUrl($this->context, $this->module->name)
         );
 
-        $apiKey = Configuration::get
+        $apiKey = Configuration::get('COINBASE_API_KEY');
+        \CoinbaseSDK
