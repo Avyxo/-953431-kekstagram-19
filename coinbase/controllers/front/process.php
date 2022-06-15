@@ -84,4 +84,6 @@ class CoinbaseProcessModuleFrontController extends ModuleFrontController
         );
 
         $apiKey = Configuration::get('COINBASE_API_KEY');
-        \CoinbaseSDK
+        \CoinbaseSDK\ApiClient::init($apiKey);
+
+        return \Coin
