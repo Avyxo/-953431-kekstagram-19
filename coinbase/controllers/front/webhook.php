@@ -34,3 +34,50 @@ class CoinbaseWebhookModuleFrontController extends ModuleFrontController
         if (is_null($status)) {
             throw new Exception('Invalid status');
         }
+
+        //Update order status
+        $history = new OrderHistory();
+        $history->id_order = $order->id;
+        $history->changeIdOrderState((int)Configuration::get($status), $order->id);
+
+        // If charge payment exists then update transaction id with charge id
+        $chargePayment = end($chargeObj->payments);
+        $payments = $order->getOrderPaymentCollection();
+        if ($payments->count() > 0 && $chargePayment && isset($chargePayment['transaction_id'])) {
+            $payments[0]->transaction_id = $chargeId;
+            $payments[0]->update();
+        }
+
+        die(0);
+    }
+
+    private function getStatusByTimeLine($timeline)
+    {
+        switch ($timeline['status']) {
+            case 'NEW':
+                return 'COINBASE_NEW';
+            case 'PENDING':
+                return 'COINBASE_PENDING';
+            case 'EXPIRED':
+                return 'PS_OS_ERROR';
+            case 'COMPLETED':
+                return 'PS_OS_PAYMENT';
+            case 'CANCELED':
+                return 'PS_OS_CANCELED';
+            case 'UNRESOLVED':
+                // mark order as paid on overpaid
+                if ($timeline['context'] === 'OVERPAID') {
+                    return 'PS_OS_PAYMENT';
+                } else {
+                    return 'PS_OS_ERROR';
+                }
+            case 'RESOLVED':
+                return 'PS_OS_PAYMENT';
+            default:
+                return null;
+        }
+    }
+
+    private function constructEvent()
+    {
+        $payload = trim(file_get_contents('php://input'));
