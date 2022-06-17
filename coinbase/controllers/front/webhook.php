@@ -81,3 +81,17 @@ class CoinbaseWebhookModuleFrontController extends ModuleFrontController
     private function constructEvent()
     {
         $payload = trim(file_get_contents('php://input'));
+
+        // if test mode don't run validation
+        if ((bool)Configuration::get('COINBASE_SANDBOX')) {
+            $data = \json_decode($payload, true);
+            return new \CoinbaseSDK\Resources\Event($data['event']);
+        }
+
+        $sharedSecret = Configuration::get('COINBASE_SHARED_SECRET');
+        $headers = array_change_key_case(getallheaders());
+        $signatureHeader = isset($headers[SIGNATURE_HEADER]) ? $headers[SIGNATURE_HEADER] : null;
+
+        return \CoinbaseSDK\Webhook::buildEvent($payload, $signatureHeader, $sharedSecret);
+    }
+}
