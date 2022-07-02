@@ -60,3 +60,48 @@ class ApiClient
     public static function init($apiKey, $baseUrl = null, $apiVersion = null, $timeout = null)
     {
         if (!self::$instance) {
+            self::$instance = new self();
+        }
+
+        self::$instance->setApiKey($apiKey)
+            ->setBaseUrl($baseUrl)
+            ->setApiVersion($apiVersion)
+            ->setTimeout($timeout);
+
+        return self::$instance;
+    }
+
+    /**
+     * @return ApiClient
+     * @throws \Exception
+     */
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            throw new \Exception('Please init client first.');
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    private function getParam($key)
+    {
+        if (array_key_exists($key, $this->params)) {
+            return $this->params[$key];
+        }
+    }
+
+    /**
+     * @param string $key
+     * @param mixed $value
+     * @return $this
+     */
+    private function setParam($key, $value)
+    {
+        $this->params[$key] = $value;
+        return $this;
+    }
