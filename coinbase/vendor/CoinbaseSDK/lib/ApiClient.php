@@ -21,3 +21,42 @@ class ApiClient
 
     /**
      * @var ApiClient
+     */
+    private static $instance;
+
+    /**
+     * @var
+     */
+    private $logger;
+
+    /**
+     * @var mixed
+     */
+    private $response;
+
+    /**
+     * @var
+     */
+    private $httpClient;
+
+    /**
+     * ApiClient constructor.
+     */
+    private function __construct()
+    {
+    }
+
+    private function __clone()
+    {
+    }
+
+    /**
+     * @param string $apiKey
+     * @param null|string $baseUrl
+     * @param null|string $apiVersion
+     * @param null|integer $timeout
+     * @return ApiClient
+     */
+    public static function init($apiKey, $baseUrl = null, $apiVersion = null, $timeout = null)
+    {
+        if (!self::$instance) {
