@@ -105,3 +105,49 @@ class ApiClient
         $this->params[$key] = $value;
         return $this;
     }
+
+    /**
+     * @param string $value
+     * @return $this
+     * @throws \Exception
+     */
+    public function setApiKey($value)
+    {
+        if (empty($value)) {
+            throw new \Exception('Api Key is required');
+        }
+
+        $this->setParam(self::API_KEY_PARAM, $value);
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiKey()
+    {
+        return $this->getParam(self::API_KEY_PARAM);
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setBaseUrl($value)
+    {
+        if (!empty($value) && \is_string($value)) {
+            if (substr($value, -1) !== '/') {
+                $value .= '/';
+            }
+
+            $this->setParam(self::BASE_API_URL_PARAM, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBaseUrl()
+    {
