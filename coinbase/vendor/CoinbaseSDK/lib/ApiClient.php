@@ -223,3 +223,42 @@ class ApiClient
 
         return $rheaders;
     }
+
+    /**
+     * @param string $method
+     * @param string $path
+     * @param array $options
+     * @return ApiResponse
+     */
+    private function makeRequest($method, $path, $params = [], $body = [], $headers = [])
+    {
+        try {
+            $absUrl = Util::joinPath($this->getParam('baseApiUrl'), $path);
+            $headers = $this->generateHeaders($headers);
+            $client = $this->getHttpClient();
+            $apiResponse = $client->request($method, $absUrl, $params, $body, $headers);
+
+            return $apiResponse;
+        } catch (\Exception $exception) {
+            throw ApiErrorFactory::create($exception);
+        }
+    }
+
+    public function getHttpClient()
+    {
+        return HttpClient::getInstance();
+    }
+
+    /**
+     * @param $path
+     * @param array $queryParams
+     * @param array $headers
+     * @return ApiResponse
+     */
+    public function get($path, $queryParams = [], $headers = [])
+    {
+        return $this->makeRequest('GET', $path, $queryParams, [], $headers);
+    }
+
+    /**
+     * @param string $path
