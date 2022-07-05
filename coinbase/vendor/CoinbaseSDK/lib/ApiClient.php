@@ -193,3 +193,33 @@ class ApiClient
      */
     public function getTimeout()
     {
+        return $this->getParam(self::TIMEOUT_PARAM);
+    }
+
+    /**
+     * @param array $query
+     * @param array $body
+     * @param array $headers
+     * @return array
+     */
+    private function generateHeaders($headers = [])
+    {
+        $headers = array_merge(
+            [
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+                'User-Agent' => 'Coinbase ',
+                'X-CC-Api-Key' => $this->getParam('apiKey'),
+                'X-CC-Version' => $this->getParam('apiVersion')
+            ],
+            $headers
+        );
+
+        $rheaders = [];
+
+        foreach ($headers as $headerName => $headerValue) {
+            $rheaders[] = "$headerName: $headerValue";
+        }
+
+        return $rheaders;
+    }
