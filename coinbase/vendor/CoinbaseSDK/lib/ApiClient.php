@@ -151,3 +151,45 @@ class ApiClient
      */
     public function getBaseUrl()
     {
+        return $this->getParam(self::BASE_API_URL_PARAM);
+    }
+
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setApiVersion($value)
+    {
+        if (!empty($value) && \is_string($value)) {
+            $this->setParam(self::API_VERSION_PARAM, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApiVersion()
+    {
+        return $this->getParam(self::API_VERSION_PARAM);
+    }
+
+    /**
+     * @param integer $value
+     * @return $this
+     */
+    public function setTimeout($value)
+    {
+        if (!empty($value) && \is_numeric($value)) {
+            $this->setParam(self::TIMEOUT_PARAM, $value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTimeout()
+    {
