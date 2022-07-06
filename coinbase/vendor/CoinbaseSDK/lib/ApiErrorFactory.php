@@ -1,4 +1,4 @@
 <?php
 namespace CoinbaseSDK;
 
-use Coinb
+use CoinbaseSDK\Exceptions\AuthenticationExcept
