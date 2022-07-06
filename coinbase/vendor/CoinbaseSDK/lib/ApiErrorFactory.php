@@ -1,2 +1,4 @@
 <?php
-na
+namespace CoinbaseSDK;
+
+use Coinb
