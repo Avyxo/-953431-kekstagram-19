@@ -262,3 +262,37 @@ class ApiClient
 
     /**
      * @param string $path
+     * @param array $body
+     * @param array $headers
+     * @return ApiResponse
+     */
+    public function post($path, $body, $headers)
+    {
+        return $this->makeRequest('POST', $path, [], $body, $headers);
+    }
+
+    /**
+     * @param string $path
+     * @param array $headers
+     * @return ApiResponse
+     */
+    public function put($path, $body, $headers)
+    {
+        return $this->makeRequest('PUT', $path, [], $body, $headers);
+    }
+
+    /**
+     * @param string $path
+     * @param array $headers
+     * @return ApiResponse
+     */
+    public function delete($path, $headers = [])
+    {
+        return $this->makeRequest('DELETE', $path, [], [], $headers);
+    }
+
+    public static function getClassName()
+    {
+        return get_called_class();
+    }
+}
