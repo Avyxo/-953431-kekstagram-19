@@ -6,4 +6,4 @@ use CoinbaseSDK\Exceptions\InternalServerException;
 use CoinbaseSDK\Exceptions\InvalidRequestException;
 use CoinbaseSDK\Exceptions\ParamRequiredException;
 use CoinbaseSDK\Exceptions\RateLimitExceededException;
-use Coinba
+use CoinbaseSDK\Exceptions\ResourceNotFoundException
