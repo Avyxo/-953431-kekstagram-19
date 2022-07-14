@@ -8,4 +8,5 @@ use CoinbaseSDK\Exceptions\ParamRequiredException;
 use CoinbaseSDK\Exceptions\RateLimitExceededException;
 use CoinbaseSDK\Exceptions\ResourceNotFoundException;
 use CoinbaseSDK\Exceptions\ServiceUnavailableException;
-use CoinbaseSDK\Exceptions\ValidationE
+use CoinbaseSDK\Exceptions\ValidationException;
+use CoinbaseSDK\Exceptions\ApiException;
