@@ -10,3 +10,8 @@ use CoinbaseSDK\Exceptions\ResourceNotFoundException;
 use CoinbaseSDK\Exceptions\ServiceUnavailableException;
 use CoinbaseSDK\Exceptions\ValidationException;
 use CoinbaseSDK\Exceptions\ApiException;
+
+class ApiErrorFactory
+{
+    /**
+     * @var array
