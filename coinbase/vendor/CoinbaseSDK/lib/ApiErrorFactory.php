@@ -20,4 +20,5 @@ class ApiErrorFactory
 
     /**
      * @var array
-  
+     */
+    private static $mapErrorCodeToClass 
