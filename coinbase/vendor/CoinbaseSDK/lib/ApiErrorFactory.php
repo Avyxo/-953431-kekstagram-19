@@ -21,4 +21,8 @@ class ApiErrorFactory
     /**
      * @var array
      */
-    private static $mapErrorCodeToClass 
+    private static $mapErrorCodeToClass = [];
+
+    /**
+     * @param $message
+     * @return mixed|
