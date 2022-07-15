@@ -16,4 +16,8 @@ class ApiErrorFactory
     /**
      * @var array
      */
-    private static $mapErrorMessageToC
+    private static $mapErrorMessageToClass = [];
+
+    /**
+     * @var array
+  
