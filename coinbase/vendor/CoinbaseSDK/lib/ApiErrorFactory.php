@@ -27,4 +27,6 @@ class ApiErrorFactory
      * @param $message
      * @return mixed|null
      */
-    public static function g
+    public static function getErrorClassByMessage($message)
+    {
+        if (
