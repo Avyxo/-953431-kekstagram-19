@@ -25,4 +25,6 @@ class ApiErrorFactory
 
     /**
      * @param $message
-     * @return mixed|
+     * @return mixed|null
+     */
+    public static function g
