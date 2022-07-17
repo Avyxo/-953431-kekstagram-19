@@ -30,4 +30,5 @@ class ApiErrorFactory
     public static function getErrorClassByMessage($message)
     {
         if (empty(self::$mapErrorMessageToClass)) {
-            self::$m
+            self::$mapErrorMessageToClass = [
+              
