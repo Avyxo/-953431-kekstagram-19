@@ -32,4 +32,4 @@ class ApiErrorFactory
         if (empty(self::$mapErrorMessageToClass)) {
             self::$mapErrorMessageToClass = [
                 'not_found' => ResourceNotFoundException::getClassName(),
-                'param_r
+                'param_required' => ParamRequiredException::getClassN
