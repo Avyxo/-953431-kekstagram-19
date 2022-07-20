@@ -33,4 +33,4 @@ class ApiErrorFactory
             self::$mapErrorMessageToClass = [
                 'not_found' => ResourceNotFoundException::getClassName(),
                 'param_required' => ParamRequiredException::getClassName(),
-                'valid
+                'validation_error' => ValidationExceptio
