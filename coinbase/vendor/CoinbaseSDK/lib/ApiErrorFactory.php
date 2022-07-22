@@ -34,4 +34,5 @@ class ApiErrorFactory
                 'not_found' => ResourceNotFoundException::getClassName(),
                 'param_required' => ParamRequiredException::getClassName(),
                 'validation_error' => ValidationException::getClassName(),
-                'invalid_requ
+                'invalid_request' => InvalidRequestException::getClassName(),
+        
