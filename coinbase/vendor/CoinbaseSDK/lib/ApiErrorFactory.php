@@ -35,4 +35,5 @@ class ApiErrorFactory
                 'param_required' => ParamRequiredException::getClassName(),
                 'validation_error' => ValidationException::getClassName(),
                 'invalid_request' => InvalidRequestException::getClassName(),
-                'authentication_error' => Authent
+                'authentication_error' => AuthenticationException::getClassName(),
+        
