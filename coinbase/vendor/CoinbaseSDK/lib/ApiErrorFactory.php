@@ -37,4 +37,4 @@ class ApiErrorFactory
                 'invalid_request' => InvalidRequestException::getClassName(),
                 'authentication_error' => AuthenticationException::getClassName(),
                 'rate_limit_exceeded' => RateLimitExceededException::getClassName(),
-           
+                'internal_server_error' => Internal
