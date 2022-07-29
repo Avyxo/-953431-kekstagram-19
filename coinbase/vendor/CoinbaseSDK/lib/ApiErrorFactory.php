@@ -41,4 +41,7 @@ class ApiErrorFactory
             ];
         }
 
-        return isset(self::$mapErrorMessageToClass[$message]) ? self::$mapErr
+        return isset(self::$mapErrorMessageToClass[$message]) ? self::$mapErrorMessageToClass[$message]: null;
+    }
+
+  
