@@ -39,4 +39,6 @@ class ApiErrorFactory
                 'rate_limit_exceeded' => RateLimitExceededException::getClassName(),
                 'internal_server_error' => InternalServerException::getClassName()
             ];
-   
+        }
+
+        return isset(self::$mapErrorMe
