@@ -44,4 +44,6 @@ class ApiErrorFactory
         return isset(self::$mapErrorMessageToClass[$message]) ? self::$mapErrorMessageToClass[$message]: null;
     }
 
-  
+    /**
+     * @param $code
+     * @ret
