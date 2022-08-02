@@ -46,4 +46,6 @@ class ApiErrorFactory
 
     /**
      * @param $code
-     * @ret
+     * @return mixed|null
+     */
+    public static function ge
