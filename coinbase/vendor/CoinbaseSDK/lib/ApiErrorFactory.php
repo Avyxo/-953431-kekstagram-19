@@ -48,4 +48,6 @@ class ApiErrorFactory
      * @param $code
      * @return mixed|null
      */
-    public static function ge
+    public static function getErrorClassByCode($code)
+    {
+        if (empty(
