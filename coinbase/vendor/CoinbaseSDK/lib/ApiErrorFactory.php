@@ -51,4 +51,5 @@ class ApiErrorFactory
     public static function getErrorClassByCode($code)
     {
         if (empty(self::$mapErrorCodeToClass)) {
-      
+            self::$mapErrorCodeToClass = [
+                40
