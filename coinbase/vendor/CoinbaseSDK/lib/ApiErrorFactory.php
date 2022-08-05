@@ -53,4 +53,5 @@ class ApiErrorFactory
         if (empty(self::$mapErrorCodeToClass)) {
             self::$mapErrorCodeToClass = [
                 400 => InvalidRequestException::getClassName(),
-                401 => AuthenticationException::get
+                401 => AuthenticationException::getClassName(),
+                404 => Resour
