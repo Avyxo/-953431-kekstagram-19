@@ -55,4 +55,4 @@ class ApiErrorFactory
                 400 => InvalidRequestException::getClassName(),
                 401 => AuthenticationException::getClassName(),
                 404 => ResourceNotFoundException::getClassName(),
-            
+                429 => RateLimitExceededException::getClassName()
