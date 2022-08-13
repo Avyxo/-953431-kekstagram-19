@@ -61,4 +61,4 @@ class ApiErrorFactory
             ];
         }
 
-        return isset(self:
+        return isset(self::$mapErrorCodeToClass[$code]) ? self
