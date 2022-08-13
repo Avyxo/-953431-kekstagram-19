@@ -57,4 +57,5 @@ class ApiErrorFactory
                 404 => ResourceNotFoundException::getClassName(),
                 429 => RateLimitExceededException::getClassName(),
                 500 => InternalServerException::getClassName(),
-                503 => ServiceUnava
+                503 => ServiceUnavailableException::getClassName()
+         
