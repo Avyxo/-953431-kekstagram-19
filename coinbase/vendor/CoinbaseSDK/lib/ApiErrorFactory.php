@@ -58,4 +58,7 @@ class ApiErrorFactory
                 429 => RateLimitExceededException::getClassName(),
                 500 => InternalServerException::getClassName(),
                 503 => ServiceUnavailableException::getClassName()
-         
+            ];
+        }
+
+        return isset(self:
