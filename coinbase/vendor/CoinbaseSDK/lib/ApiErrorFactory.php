@@ -65,4 +65,6 @@ class ApiErrorFactory
     }
 
     /**
-     * @param \Exception $e
+     * @param \Exception $exception
+     */
+    public static function 
