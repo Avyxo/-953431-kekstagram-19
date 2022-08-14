@@ -67,4 +67,6 @@ class ApiErrorFactory
     /**
      * @param \Exception $exception
      */
-    public static function 
+    public static function create($exception)
+    {
+        $code =
