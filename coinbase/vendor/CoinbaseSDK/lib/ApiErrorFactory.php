@@ -61,4 +61,8 @@ class ApiErrorFactory
             ];
         }
 
-        return isset(self::$mapErrorCodeToClass[$code]) ? self::$mapErrorCodeToClass[$code]: null
+        return isset(self::$mapErrorCodeToClass[$code]) ? self::$mapErrorCodeToClass[$code]: null;
+    }
+
+    /**
+     * @param \Exception $e
