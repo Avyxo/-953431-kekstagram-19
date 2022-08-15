@@ -70,4 +70,5 @@ class ApiErrorFactory
     public static function create($exception)
     {
         $code = $exception->getStatusCode();
-     
+        $body = $exception->getBody();
+        $
