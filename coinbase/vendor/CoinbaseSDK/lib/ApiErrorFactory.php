@@ -71,4 +71,5 @@ class ApiErrorFactory
     {
         $code = $exception->getStatusCode();
         $body = $exception->getBody();
-        $data = $body ? json_decode($body,
+        $data = $body ? json_decode($body, true) : null;
+        $errorMessage = isset($data['err
