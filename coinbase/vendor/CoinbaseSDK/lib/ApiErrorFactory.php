@@ -75,4 +75,4 @@ class ApiErrorFactory
         $errorMessage = isset($data['error']['message']) ? $data['error']['message'] : $exception->getMessage();
         $errorId = isset($data['error']['type']) ? $data['error']['type'] : null;
 
-        $errorClass = self::getErrorClass
+        $errorClass = self::getErrorClassByMessage($errorId) ?: self::getErrorClassBy
