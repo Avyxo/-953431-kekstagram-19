@@ -77,4 +77,6 @@ class ApiErrorFactory
 
         $errorClass = self::getErrorClassByMessage($errorId) ?: self::getErrorClassByCode($code) ?: ApiException::getClassName();
 
-        return new $errorClass($errorM
+        return new $errorClass($errorMessage, $code);
+    }
+}
