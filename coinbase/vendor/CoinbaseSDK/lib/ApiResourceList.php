@@ -76,3 +76,40 @@ class ApiResourceList extends \ArrayObject
     /**
      * @return array
      */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasNext()
+    {
+        return isset($this->pagination[self::CURSOR_PARAM][1]) && null !== $this->pagination[self::CURSOR_PARAM][1];
+    }
+
+    /**
+     * @return bool
+     */
+    public function loadNext()
+    {
+        if (!$this->hasNext()) {
+            return false;
+        }
+
+        $nextCursor = $this->pagination[self::CURSOR_PARAM][1];
+        $params = $this->getParams();
+        $params[self::NEXT_CURSOR] = $nextCursor;
+        $this->loadPage($params);
+
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPrev()
+    {
+        return isset($this->pagination[self::CURSOR_PARAM][0]) && null !== $this->pagination[self::CURSOR_PARAM][0];
+    }
