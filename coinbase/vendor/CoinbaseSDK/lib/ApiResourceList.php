@@ -23,3 +23,56 @@ class ApiResourceList extends \ArrayObject
     /**
      * @var string
      */
+    protected $resourceClass;
+
+    /**
+     * @var array
+     */
+    protected $headers = [];
+
+    /**
+     * @var array
+     */
+    protected $params = [];
+
+    /**
+     * ApiResourceList constructor.
+     * @param array $items
+     * @param array $pagination
+     */
+    public function __construct($resourceClass, $items, $pagination, $params, $headers)
+    {
+        $this->resourceClass = $resourceClass;
+        $this->items = $items;
+        $this->pagination = $pagination;
+        $this->params = $params;
+        $this->headers = $headers;
+    }
+
+    /**
+     * @param $items
+     */
+    public function setItems($items)
+    {
+        $this->items = $items;
+    }
+
+    /**
+     * @param $pagination
+     */
+    public function setPagination($pagination)
+    {
+        $this->pagination = $pagination;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPagination()
+    {
+        return $this->pagination;
+    }
+
+    /**
+     * @return array
+     */
