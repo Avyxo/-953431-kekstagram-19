@@ -113,3 +113,55 @@ class ApiResourceList extends \ArrayObject
     {
         return isset($this->pagination[self::CURSOR_PARAM][0]) && null !== $this->pagination[self::CURSOR_PARAM][0];
     }
+
+    /**
+     * @return bool
+     */
+    public function loadPrev()
+    {
+        if (!$this->hasPrev()) {
+            return false;
+        }
+
+        $prevCursor = $this->pagination[self::CURSOR_PARAM][0];
+        $params = $this->getParams();
+        $params[self::PREV_CURSOR] = $prevCursor;
+        $this->loadPage($params);
+
+        return true;
+    }
+
+    protected function loadPage($params)
+    {
+        $client = self::getClient();
+        $resourceClass = $this->resourceClass;
+        $path = $resourceClass::getResourcePath();
+
+        $response = $client->get($path, $params, $this->headers);
+        $responseData = $response->bodyArray;
+
+        $this->pagination = isset($responseData['pagination']) ? $responseData['pagination'] : [];
+        $this->items = [];
+
+        if (isset($responseData['data'])) {
+            $this->items = array_map(
+                function ($item) {
+                    return Util::convertToApiObject($item);
+                },
+                $responseData['data']
+            );
+        }
+    }
+
+    public function offsetGet($key)
+    {
+        return $this->items[$key];
+    }
+
+    public function offsetSet($key, $value)
+    {
+        null === $key ? array_push($this->items, $value) : $this->items[$key] = $value;
+    }
+
+    public function count()
+    {
