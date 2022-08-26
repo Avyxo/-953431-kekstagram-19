@@ -199,3 +199,17 @@ class ApiResourceList extends \ArrayObject
     {
         if (self::$apiClient) {
             return self::$apiClient;
+        }
+        return ApiClient::getInstance();
+    }
+
+    public function setClient($client)
+    {
+        self::$apiClient = $client;
+    }
+
+    public static function getClassName()
+    {
+        return get_called_class();
+    }
+}
