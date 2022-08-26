@@ -30,3 +30,16 @@ class ApiResponse
      * ApiResponse constructor.
      */
     public function __construct($body, $code, $headers)
+    {
+        $this->code = $code;
+        $this->headers = $headers;
+        $this->body = $body;
+        $lowerCaseKeys = array_change_key_case($this->headers);
+        $this->requestId = array_key_exists(strtolower(self::REQUEST_ID_HEADER), $lowerCaseKeys)
+            && !empty($lowerCaseKeys[strtolower(self::REQUEST_ID_HEADER)][0]) ?
+            $lowerCaseKeys[strtolower(self::REQUEST_ID_HEADER)][0] : null;
+
+        $this->bodyArray = !empty($this->body)? \json_decode($this->body, true): null;
+
+    }
+}
