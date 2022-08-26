@@ -165,3 +165,37 @@ class ApiResourceList extends \ArrayObject
 
     public function count()
     {
+        return count($this->items);
+    }
+
+    public function countAll()
+    {
+        if (isset($this->pagination['total'])) {
+            return $this->pagination['total'];
+        }
+    }
+
+    public function asort()
+    {
+        asort($this->items);
+    }
+
+    public function ksort()
+    {
+        ksort($this->items);
+    }
+
+    public function offsetUnset($key)
+    {
+        unset($this->items[$key]);
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->items);
+    }
+
+    public static function getClient()
+    {
+        if (self::$apiClient) {
+            return self::$apiClient;
