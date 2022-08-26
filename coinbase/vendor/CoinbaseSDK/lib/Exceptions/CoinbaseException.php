@@ -1,2 +1,4 @@
 <?php
-namesp
+namespace CoinbaseSDK\Exceptions;
+
+class CoinbaseExcep
