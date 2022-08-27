@@ -18,3 +18,11 @@ class CurlErrorException extends ApiException
 
     public function getBody()
     {
+        return $this->body;
+    }
+
+    public function getStatusCode()
+    {
+        return $this->httpCode;
+    }
+}
