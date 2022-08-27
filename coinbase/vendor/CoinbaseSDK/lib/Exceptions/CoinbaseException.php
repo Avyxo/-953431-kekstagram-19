@@ -5,4 +5,6 @@ class CoinbaseException extends \Exception
 {
     public static function getClassName()
     {
-        return get
+        return get_called_class();
+    }
+}
