@@ -1,4 +1,6 @@
 <?php
 namespace CoinbaseSDK\Exceptions;
 
-class CoinbaseExcep
+class CoinbaseException extends \Exception
+{
+    public static function 
