@@ -1,4 +1,6 @@
 <?php
 namespace CoinbaseSDK\Exceptions;
 
-class InvalidRequestException extends ApiExcepti
+class InvalidRequestException extends ApiException
+{
+}
