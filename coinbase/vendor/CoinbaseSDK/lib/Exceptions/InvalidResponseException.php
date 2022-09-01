@@ -1,2 +1,4 @@
 <?php
-namespace CoinbaseSDK\Exceptions
+namespace CoinbaseSDK\Exceptions;
+
+class InvalidResponseException extends 
