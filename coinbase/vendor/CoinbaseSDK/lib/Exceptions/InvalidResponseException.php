@@ -3,4 +3,5 @@ namespace CoinbaseSDK\Exceptions;
 
 class InvalidResponseException extends CoinbaseException
 {
-    public function __cons
+    public function __construct($message = '', $body = '')
+    {
