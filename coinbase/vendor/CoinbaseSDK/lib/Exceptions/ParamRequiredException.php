@@ -1,2 +1,4 @@
 <?php
-namespace CoinbaseS
+namespace CoinbaseSDK\Exceptions;
+
+class ParamRequiredExce
