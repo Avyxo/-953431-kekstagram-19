@@ -1,4 +1,6 @@
 <?php
 namespace CoinbaseSDK\Exceptions;
 
-class ParamRequiredExce
+class ParamRequiredException extends ApiException
+{
+}
