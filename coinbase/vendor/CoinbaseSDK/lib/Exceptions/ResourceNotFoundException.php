@@ -1,4 +1,6 @@
 <?php
 namespace CoinbaseSDK\Exceptions;
 
-class ResourceNotFoundException extends 
+class ResourceNotFoundException extends ApiException
+{
+}
