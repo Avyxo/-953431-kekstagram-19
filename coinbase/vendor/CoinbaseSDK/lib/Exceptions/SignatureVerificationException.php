@@ -1,2 +1,4 @@
 <?php
-namespace CoinbaseSD
+namespace CoinbaseSDK\Exceptions;
+
+class SignatureVerificationExcepti
