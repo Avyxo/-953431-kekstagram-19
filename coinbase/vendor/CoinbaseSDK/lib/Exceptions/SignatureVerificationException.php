@@ -1,4 +1,6 @@
 <?php
 namespace CoinbaseSDK\Exceptions;
 
-class SignatureVerificationExcepti
+class SignatureVerificationException extends CoinbaseException
+{
+    pu
