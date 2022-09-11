@@ -3,4 +3,4 @@ namespace CoinbaseSDK\Exceptions;
 
 class SignatureVerificationException extends CoinbaseException
 {
-    pu
+    public function __construct($signature, $payloa
