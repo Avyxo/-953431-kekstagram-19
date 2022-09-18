@@ -142,3 +142,40 @@ class HttpClient
                 usleep(intval(0.1 * 1000000));
             } else {
                 break;
+            }
+        }
+
+        if ($rbody === false || !in_array($rcode, self::$successCodes)) {
+            $this->handleCurlError($errno, $rbody, $rcode, $numRetries);
+        }
+
+        return [$rbody, $rcode];
+    }
+
+    private function handleCurlError($errno, $rbody, $rcode, $numRetries)
+    {
+        switch ($errno) {
+            case CURLE_COULDNT_CONNECT:
+            case CURLE_COULDNT_RESOLVE_HOST:
+            case CURLE_OPERATION_TIMEOUTED:
+                $msg = "Could not connect to server";
+                break;
+            case CURLE_SSL_CACERT:
+            case CURLE_SSL_PEER_CERTIFICATE:
+                $msg = "Could not verify SSL certificate.";
+                break;
+            default:
+                $msg = "Unexpected http error";
+        }
+
+        $msg .= "\n\n(Network error [errno $errno]: $rbody)";
+
+        if ($numRetries > 0) {
+            $msg .= "\n\nRequest was retried $numRetries times.";
+        }
+
+        throw new CurlErrorException($msg, $rbody, $rcode);
+    }
+
+    private function shouldRetry($errno, $rcode, $numRetries)
+    {
