@@ -179,3 +179,19 @@ class HttpClient
 
     private function shouldRetry($errno, $rcode, $numRetries)
     {
+        if ($numRetries >= self::REQUEST_RETRIES) {
+            return false;
+        }
+
+        // Retry on timeout-related problems (either on open or read).
+        if ($errno === CURLE_OPERATION_TIMEOUTED) {
+            return true;
+        }
+
+        if ($errno === CURLE_COULDNT_CONNECT) {
+            return true;
+        }
+
+        return false;
+    }
+}
