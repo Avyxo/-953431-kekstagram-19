@@ -103,3 +103,42 @@ class HttpClient
         };
 
         $opts[CURLOPT_URL] = $absUrl;
+        $opts[CURLOPT_RETURNTRANSFER] = true;
+        $opts[CURLOPT_CONNECTTIMEOUT] = $this->connectTimeout;
+        $opts[CURLOPT_TIMEOUT] = $this->timeout;
+        $opts[CURLOPT_HEADERFUNCTION] = $headerCallback;
+        $opts[CURLOPT_HTTPHEADER] = $headers;
+
+        list($rbody, $rcode) = $this->executeRequestWithRetries($opts, $absUrl);
+
+        return new ApiResponse($rbody, $rcode, $rheaders);
+    }
+
+    /**
+     * @param array $opts cURL options
+     */
+    private function executeRequestWithRetries($opts, $absUrl)
+    {
+        $numRetries = 0;
+
+        while (true) {
+            $rcode = 0;
+            $errno = 0;
+
+            $curl = curl_init();
+            curl_setopt_array($curl, $opts);
+            $rbody = curl_exec($curl);
+
+            if ($rbody === false) {
+                $errno = curl_errno($curl);
+                $message = curl_error($curl);
+            } else {
+                $rcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            }
+            curl_close($curl);
+
+            if ($this->shouldRetry($errno, $rcode, $numRetries)) {
+                $numRetries += 1;
+                usleep(intval(0.1 * 1000000));
+            } else {
+                break;
