@@ -1,2 +1,4 @@
 <?php
-namespa
+namespace CoinbaseSDK\Operations;
+
+use Coinba
