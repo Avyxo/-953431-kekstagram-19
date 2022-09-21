@@ -5,4 +5,5 @@ use CoinbaseSDK\Util;
 
 trait DeleteMethodTrait
 {
-    public
+    public function delete($headers = [])
+    {
