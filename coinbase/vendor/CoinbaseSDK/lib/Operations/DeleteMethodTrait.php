@@ -1,4 +1,8 @@
 <?php
 namespace CoinbaseSDK\Operations;
 
-use Coinba
+use CoinbaseSDK\Util;
+
+trait DeleteMethodTrait
+{
+    public
