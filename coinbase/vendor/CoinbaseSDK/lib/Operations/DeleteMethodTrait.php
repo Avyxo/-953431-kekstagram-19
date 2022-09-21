@@ -7,3 +7,4 @@ trait DeleteMethodTrait
 {
     public function delete($headers = [])
     {
+        $id = $this->getPrimaryKeyValue();
