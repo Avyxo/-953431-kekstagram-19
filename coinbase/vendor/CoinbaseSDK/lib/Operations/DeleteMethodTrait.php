@@ -10,4 +10,5 @@ trait DeleteMethodTrait
         $id = $this->getPrimaryKeyValue();
 
         if (!\is_scalar($id)) {
-            throw new
+            throw new \Exception('id is not set.');
+  
