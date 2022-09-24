@@ -11,4 +11,6 @@ trait DeleteMethodTrait
 
         if (!\is_scalar($id)) {
             throw new \Exception('id is not set.');
-  
+        }
+
+        $path = Util::joinPat
