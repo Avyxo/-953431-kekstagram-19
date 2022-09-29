@@ -15,4 +15,5 @@ trait DeleteMethodTrait
 
         $path = Util::joinPath(static::getResourcePath(), $id);
         $client = static::getClient();
-        $client-
+        $client->delete($path, $headers);
+        $this->clearAtt
