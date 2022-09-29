@@ -14,4 +14,5 @@ trait DeleteMethodTrait
         }
 
         $path = Util::joinPath(static::getResourcePath(), $id);
-        $client
+        $client = static::getClient();
+        $client-
