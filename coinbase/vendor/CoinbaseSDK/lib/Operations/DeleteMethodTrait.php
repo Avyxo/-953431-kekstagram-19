@@ -13,4 +13,5 @@ trait DeleteMethodTrait
             throw new \Exception('id is not set.');
         }
 
-        $path = Util::joinPat
+        $path = Util::joinPath(static::getResourcePath(), $id);
+        $client
