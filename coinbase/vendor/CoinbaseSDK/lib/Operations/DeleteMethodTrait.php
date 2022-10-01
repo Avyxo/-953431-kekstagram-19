@@ -19,4 +19,6 @@ trait DeleteMethodTrait
         $this->clearAttributes();
     }
 
-    public static function d
+    public static function deleteById($id, $headers = [])
+    {
+       
