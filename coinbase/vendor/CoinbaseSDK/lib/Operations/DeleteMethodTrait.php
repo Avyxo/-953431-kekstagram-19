@@ -21,4 +21,5 @@ trait DeleteMethodTrait
 
     public static function deleteById($id, $headers = [])
     {
-       
+        if (!\is_scalar($id)) {
+            throw new \
