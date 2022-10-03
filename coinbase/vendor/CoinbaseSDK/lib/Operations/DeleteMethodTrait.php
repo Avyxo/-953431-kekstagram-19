@@ -25,4 +25,6 @@ trait DeleteMethodTrait
             throw new \Exception('Invalid id provided.');
         }
 
-        $path = Util::joinPath(static::getResourcePa
+        $path = Util::joinPath(static::getResourcePath(), $id);
+        $client = static::getClient();
+ 
