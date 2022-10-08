@@ -6,4 +6,4 @@ use CoinbaseSDK\ApiResourceList;
 
 trait ReadMethodTrait
 {
-   
+    public static function retrieve($id, $h
