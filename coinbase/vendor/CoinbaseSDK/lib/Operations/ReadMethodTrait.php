@@ -1,2 +1,5 @@
 <?php
-namespace Coi
+namespace CoinbaseSDK\Operations;
+
+use CoinbaseSDK\Util;
+use Co
