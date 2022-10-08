@@ -2,4 +2,8 @@
 namespace CoinbaseSDK\Operations;
 
 use CoinbaseSDK\Util;
-use Co
+use CoinbaseSDK\ApiResourceList;
+
+trait ReadMethodTrait
+{
+   
