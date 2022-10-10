@@ -9,4 +9,7 @@ trait ReadMethodTrait
     public static function retrieve($id, $headers = [])
     {
         if (!\is_scalar($id)) {
-            throw new \Exception('Invalid id p
+            throw new \Exception('Invalid id provided.');
+        }
+
+        $client = static:
