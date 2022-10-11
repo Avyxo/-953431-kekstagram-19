@@ -12,4 +12,5 @@ trait ReadMethodTrait
             throw new \Exception('Invalid id provided.');
         }
 
-        $client = static:
+        $client = static::getClient();
+        $path = Util::joinPat
