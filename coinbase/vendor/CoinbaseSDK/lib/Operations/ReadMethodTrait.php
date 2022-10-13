@@ -14,4 +14,6 @@ trait ReadMethodTrait
 
         $client = static::getClient();
         $path = Util::joinPath(static::getResourcePath(), $id);
-        $responseData = $client->get($path, [], $header
+        $responseData = $client->get($path, [], $headers);
+
+        return Util::convertToApiObject($r
