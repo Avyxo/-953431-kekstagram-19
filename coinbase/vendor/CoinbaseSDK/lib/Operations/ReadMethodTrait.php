@@ -19,4 +19,6 @@ trait ReadMethodTrait
         return Util::convertToApiObject($responseData);
     }
 
-    public function refresh($
+    public function refresh($headers = [])
+    {
+        $id = $this->g
