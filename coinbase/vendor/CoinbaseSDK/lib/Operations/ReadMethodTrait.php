@@ -21,4 +21,6 @@ trait ReadMethodTrait
 
     public function refresh($headers = [])
     {
-        $id = $this->g
+        $id = $this->getPrimaryKeyValue();
+
+        if
