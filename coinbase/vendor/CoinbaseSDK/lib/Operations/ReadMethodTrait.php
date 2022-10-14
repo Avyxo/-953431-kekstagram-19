@@ -23,4 +23,5 @@ trait ReadMethodTrait
     {
         $id = $this->getPrimaryKeyValue();
 
-        if
+        if (!\is_scalar($id)) {
+            throw new \Exce
