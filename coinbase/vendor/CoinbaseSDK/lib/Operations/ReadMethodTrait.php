@@ -24,4 +24,7 @@ trait ReadMethodTrait
         $id = $this->getPrimaryKeyValue();
 
         if (!\is_scalar($id)) {
-            throw new \Exce
+            throw new \Exception('Invalid id provided');
+        }
+
+       
