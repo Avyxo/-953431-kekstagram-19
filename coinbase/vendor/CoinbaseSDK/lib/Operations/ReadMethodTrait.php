@@ -29,4 +29,6 @@ trait ReadMethodTrait
 
         $client = static::getClient();
         $path = Util::joinPath(static::getResourcePath(), $id);
-        $response = $client
+        $response = $client->get($path, [], $headers);
+
+        $thi
