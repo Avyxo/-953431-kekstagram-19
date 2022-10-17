@@ -31,4 +31,7 @@ trait ReadMethodTrait
         $path = Util::joinPath(static::getResourcePath(), $id);
         $response = $client->get($path, [], $headers);
 
-        $thi
+        $this->refreshFrom($response);
+    }
+
+    p
