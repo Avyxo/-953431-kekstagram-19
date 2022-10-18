@@ -34,4 +34,4 @@ trait ReadMethodTrait
         $this->refreshFrom($response);
     }
 
-    p
+    public static function getList($params = [], $
