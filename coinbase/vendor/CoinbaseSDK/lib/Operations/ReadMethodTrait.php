@@ -38,4 +38,5 @@ trait ReadMethodTrait
     {
         $path = static::getResourcePath();
         $client = static::getClient();
-        $response = $client->ge
+        $response = $client->get($path, $params, $headers);
+        $respon
