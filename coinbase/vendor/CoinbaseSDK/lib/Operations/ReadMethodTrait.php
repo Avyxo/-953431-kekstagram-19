@@ -37,4 +37,5 @@ trait ReadMethodTrait
     public static function getList($params = [], $headers = [])
     {
         $path = static::getResourcePath();
-        $client = stat
+        $client = static::getClient();
+        $response = $client->ge
