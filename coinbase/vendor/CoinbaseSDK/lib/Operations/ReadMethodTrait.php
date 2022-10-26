@@ -40,4 +40,4 @@ trait ReadMethodTrait
         $client = static::getClient();
         $response = $client->get($path, $params, $headers);
         $responseData = $response->bodyArray;
-        $pagination = 
+        $pagination = isset($responseData['pagination']) ? $re
