@@ -41,4 +41,6 @@ trait ReadMethodTrait
         $response = $client->get($path, $params, $headers);
         $responseData = $response->bodyArray;
         $pagination = isset($responseData['pagination']) ? $responseData['pagination'] : [];
-        $it
+        $items = [];
+
+        if (isset($responseData['dat
