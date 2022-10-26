@@ -39,4 +39,5 @@ trait ReadMethodTrait
         $path = static::getResourcePath();
         $client = static::getClient();
         $response = $client->get($path, $params, $headers);
-        $respon
+        $responseData = $response->bodyArray;
+        $pagination = 
