@@ -43,4 +43,6 @@ trait ReadMethodTrait
         $pagination = isset($responseData['pagination']) ? $responseData['pagination'] : [];
         $items = [];
 
-        if (isset($responseData['dat
+        if (isset($responseData['data'])) {
+            $items = array_map(
+   
