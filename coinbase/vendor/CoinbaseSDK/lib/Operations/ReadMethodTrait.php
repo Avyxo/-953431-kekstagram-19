@@ -45,4 +45,5 @@ trait ReadMethodTrait
 
         if (isset($responseData['data'])) {
             $items = array_map(
-   
+                function ($item) {
+            
