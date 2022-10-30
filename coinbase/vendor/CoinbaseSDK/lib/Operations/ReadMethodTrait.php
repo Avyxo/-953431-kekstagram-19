@@ -48,4 +48,7 @@ trait ReadMethodTrait
                 function ($item) {
                     return Util::convertToApiObject($item);
                 },
-                $responseD
+                $responseData['data']
+            );
+        }
+
