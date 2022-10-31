@@ -52,3 +52,4 @@ trait ReadMethodTrait
             );
         }
 
+        return new ApiResourceList(self::getCla
