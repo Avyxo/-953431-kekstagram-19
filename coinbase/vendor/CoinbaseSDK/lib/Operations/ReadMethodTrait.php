@@ -52,4 +52,4 @@ trait ReadMethodTrait
             );
         }
 
-        return new ApiResourceList(self::getCla
+        return new ApiResourceList(self::getClassName(), $items, $pagination, $params, $headers);
