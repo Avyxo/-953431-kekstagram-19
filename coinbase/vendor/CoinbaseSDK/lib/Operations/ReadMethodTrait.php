@@ -58,4 +58,6 @@ trait ReadMethodTrait
     public static function getAll($params = [], $headers = [])
     {
         $list = [];
-        $path = static::getResourcePath(
+        $path = static::getResourcePath();
+        $client = static::getClient();
+
