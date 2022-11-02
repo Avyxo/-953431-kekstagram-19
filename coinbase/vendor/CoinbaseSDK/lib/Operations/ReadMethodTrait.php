@@ -57,4 +57,5 @@ trait ReadMethodTrait
 
     public static function getAll($params = [], $headers = [])
     {
-        $list = [
+        $list = [];
+        $path = static::getResourcePath(
