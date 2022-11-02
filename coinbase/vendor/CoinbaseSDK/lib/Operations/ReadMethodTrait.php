@@ -55,4 +55,6 @@ trait ReadMethodTrait
         return new ApiResourceList(self::getClassName(), $items, $pagination, $params, $headers);
     }
 
-    public static function getAll($para
+    public static function getAll($params = [], $headers = [])
+    {
+        $list = [
