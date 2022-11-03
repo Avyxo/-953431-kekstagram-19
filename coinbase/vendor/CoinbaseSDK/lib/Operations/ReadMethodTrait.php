@@ -61,4 +61,6 @@ trait ReadMethodTrait
         $path = static::getResourcePath();
         $client = static::getClient();
 
-        $loadPage = function ($params, &$list) use 
+        $loadPage = function ($params, &$list) use (&$loadPage, $client, $path, $headers) {
+
+         
