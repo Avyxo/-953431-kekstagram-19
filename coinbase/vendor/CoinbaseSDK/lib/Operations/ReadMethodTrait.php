@@ -63,4 +63,5 @@ trait ReadMethodTrait
 
         $loadPage = function ($params, &$list) use (&$loadPage, $client, $path, $headers) {
 
-            $response = $client->get($path
+            $response = $client->get($path, $params, $headers);
+            
