@@ -66,4 +66,5 @@ trait ReadMethodTrait
             $response = $client->get($path, $params, $headers);
             $responseData = $response->bodyArray;
             $items = array_map(
-                f
+                function ($item) {
+                    r
