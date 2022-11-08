@@ -67,4 +67,5 @@ trait ReadMethodTrait
             $responseData = $response->bodyArray;
             $items = array_map(
                 function ($item) {
-                    r
+                    return Util::convertToApiObject($item);
+            
