@@ -70,4 +70,6 @@ trait ReadMethodTrait
                     return Util::convertToApiObject($item);
                 },
                 $responseData['data']
-    
+            );
+
+            $pagination = $respo
