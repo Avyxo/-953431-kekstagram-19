@@ -72,4 +72,5 @@ trait ReadMethodTrait
                 $responseData['data']
             );
 
-            $pagination = $respo
+            $pagination = $responseData['pagination'];
+            $shown =
