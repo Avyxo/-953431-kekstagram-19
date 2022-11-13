@@ -77,4 +77,6 @@ trait ReadMethodTrait
             $limit = $pagination['limit'] ? : 0;
             $cursorRange = $pagination['cursor_range'] ? : [];
 
+            $list = array_merge($list, $items);
+
           
