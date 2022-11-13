@@ -75,4 +75,6 @@ trait ReadMethodTrait
             $pagination = $responseData['pagination'];
             $shown = $pagination['yielded'] ? : 0;
             $limit = $pagination['limit'] ? : 0;
-            $cursorRang
+            $cursorRange = $pagination['cursor_range'] ? : [];
+
+          
