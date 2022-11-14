@@ -79,4 +79,5 @@ trait ReadMethodTrait
 
             $list = array_merge($list, $items);
 
-          
+            if ($shown < $limit) {
+                retu
