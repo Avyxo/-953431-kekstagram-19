@@ -83,4 +83,5 @@ trait ReadMethodTrait
                 return;
             }
 
-            if (is
+            if (is_array($cursorRange) && count($cursorRange)) {
+   
