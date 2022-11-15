@@ -84,4 +84,4 @@ trait ReadMethodTrait
             }
 
             if (is_array($cursorRange) && count($cursorRange)) {
-   
+                $params['starting_after'] = e
