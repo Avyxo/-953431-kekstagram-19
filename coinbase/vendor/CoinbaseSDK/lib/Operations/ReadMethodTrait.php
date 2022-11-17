@@ -89,4 +89,6 @@ trait ReadMethodTrait
                 return;
             }
 
-  
+            $loadPage($params, $list);
+        };
+
