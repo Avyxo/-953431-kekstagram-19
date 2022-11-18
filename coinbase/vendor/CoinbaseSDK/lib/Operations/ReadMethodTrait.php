@@ -94,4 +94,6 @@ trait ReadMethodTrait
 
         $loadPage($params, $list);
 
-        r
+        return $list;
+    }
+}
