@@ -1,2 +1,6 @@
 <?php
-namespace CoinbaseSDK\Op
+namespace CoinbaseSDK\Operations;
+
+trait SaveMethodTrait
+{
+    publ
