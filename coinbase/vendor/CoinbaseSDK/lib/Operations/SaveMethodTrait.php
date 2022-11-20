@@ -7,4 +7,4 @@ trait SaveMethodTrait
     {
         $id = $this->getPrimaryKeyValue();
 
-        
+        if (\is_scalar($id) && !method_exists
