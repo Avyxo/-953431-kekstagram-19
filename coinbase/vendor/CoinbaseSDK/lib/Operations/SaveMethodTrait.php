@@ -3,4 +3,5 @@ namespace CoinbaseSDK\Operations;
 
 trait SaveMethodTrait
 {
-    publ
+    public function save($headers = [])
+    {
