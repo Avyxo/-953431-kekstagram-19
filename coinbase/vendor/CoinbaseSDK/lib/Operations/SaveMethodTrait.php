@@ -7,4 +7,5 @@ trait SaveMethodTrait
     {
         $id = $this->getPrimaryKeyValue();
 
-        if (\is_scalar($id) && !method_exists
+        if (\is_scalar($id) && !method_exists($this, 'update')) {
+            throw new \Exc
