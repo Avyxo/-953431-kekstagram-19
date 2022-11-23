@@ -11,4 +11,5 @@ trait SaveMethodTrait
             throw new \Exception('Update is not allowed');
         }
 
-    
+        return $id ? $this->update() : $this->insert();
+  
