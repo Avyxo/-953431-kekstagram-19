@@ -12,4 +12,5 @@ trait SaveMethodTrait
         }
 
         return $id ? $this->update() : $this->insert();
-  
+    }
+}
