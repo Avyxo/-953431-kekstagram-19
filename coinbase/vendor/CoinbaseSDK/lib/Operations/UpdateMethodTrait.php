@@ -3,4 +3,6 @@ namespace CoinbaseSDK\Operations;
 
 use CoinbaseSDK\Util;
 
-trait UpdateMe
+trait UpdateMethodTrait
+{
+    public function update($
