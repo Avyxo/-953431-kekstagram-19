@@ -1,2 +1,6 @@
 <?php
-namespace CoinbaseSDK\Op
+namespace CoinbaseSDK\Operations;
+
+use CoinbaseSDK\Util;
+
+trait UpdateMe
