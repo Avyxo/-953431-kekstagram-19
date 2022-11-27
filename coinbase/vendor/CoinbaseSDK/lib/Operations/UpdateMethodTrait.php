@@ -7,4 +7,6 @@ trait UpdateMethodTrait
 {
     public function update($headers = [])
     {
-        $id = $this->getP
+        $id = $this->getPrimaryKeyValue();
+
+        if (!\is_scalar($id) || null
