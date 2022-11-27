@@ -5,4 +5,6 @@ use CoinbaseSDK\Util;
 
 trait UpdateMethodTrait
 {
-    public function update($
+    public function update($headers = [])
+    {
+        $id = $this->getP
