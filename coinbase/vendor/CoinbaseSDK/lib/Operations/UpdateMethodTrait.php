@@ -10,4 +10,7 @@ trait UpdateMethodTrait
         $id = $this->getPrimaryKeyValue();
 
         if (!\is_scalar($id) || null === $id) {
-            throw new \Exception('id i
+            throw new \Exception('id is not set.');
+        }
+
+        $client =
