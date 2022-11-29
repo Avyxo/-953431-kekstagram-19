@@ -14,4 +14,4 @@ trait UpdateMethodTrait
         }
 
         $client = static::getClient();
-        $path 
+        $path = Util::joinPath(static::getResourcePath(), 
