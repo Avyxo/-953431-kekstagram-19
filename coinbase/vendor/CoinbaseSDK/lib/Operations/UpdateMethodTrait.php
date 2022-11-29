@@ -13,4 +13,5 @@ trait UpdateMethodTrait
             throw new \Exception('id is not set.');
         }
 
-        $client =
+        $client = static::getClient();
+        $path 
