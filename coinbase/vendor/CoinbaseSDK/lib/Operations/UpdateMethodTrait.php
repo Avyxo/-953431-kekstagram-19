@@ -14,4 +14,5 @@ trait UpdateMethodTrait
         }
 
         $client = static::getClient();
-        $path = Util::joinPath(static::getResourcePath(), 
+        $path = Util::joinPath(static::getResourcePath(), $id);
+        $body = $this->getDirtyAttr
