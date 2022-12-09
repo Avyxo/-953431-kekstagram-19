@@ -17,4 +17,6 @@ trait UpdateMethodTrait
         $path = Util::joinPath(static::getResourcePath(), $id);
         $body = $this->getDirtyAttributes();
         unset($body[$this::getPrimaryKeyName()]);
-        $response 
+        $response = $client->put($path, $body, $headers);
+
+       
