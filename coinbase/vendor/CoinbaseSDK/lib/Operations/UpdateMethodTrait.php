@@ -19,4 +19,7 @@ trait UpdateMethodTrait
         unset($body[$this::getPrimaryKeyName()]);
         $response = $client->put($path, $body, $headers);
 
-       
+        $this->refreshFrom($response);
+    }
+
+    publ
