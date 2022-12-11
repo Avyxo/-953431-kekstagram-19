@@ -22,4 +22,6 @@ trait UpdateMethodTrait
         $this->refreshFrom($response);
     }
 
-    public static function updateById($id, $body, $heade
+    public static function updateById($id, $body, $headers = [])
+    {
+        if (!\is_scalar($id)) {
