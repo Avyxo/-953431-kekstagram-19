@@ -22,4 +22,4 @@ trait UpdateMethodTrait
         $this->refreshFrom($response);
     }
 
-    publ
+    public static function updateById($id, $body, $heade
