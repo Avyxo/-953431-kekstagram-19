@@ -27,4 +27,5 @@ trait UpdateMethodTrait
         if (!\is_scalar($id)) {
             throw new \Exception('Invalid id provided.');
         }
-        unset
+        unset($body[static::getPrimaryKeyName()]);
+  
