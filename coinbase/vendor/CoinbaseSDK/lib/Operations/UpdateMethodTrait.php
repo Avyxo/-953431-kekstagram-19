@@ -25,3 +25,4 @@ trait UpdateMethodTrait
     public static function updateById($id, $body, $headers = [])
     {
         if (!\is_scalar($id)) {
+            throw new \Exception('Invalid
