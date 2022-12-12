@@ -25,4 +25,6 @@ trait UpdateMethodTrait
     public static function updateById($id, $body, $headers = [])
     {
         if (!\is_scalar($id)) {
-            throw new \Exception('Invalid
+            throw new \Exception('Invalid id provided.');
+        }
+        unset
