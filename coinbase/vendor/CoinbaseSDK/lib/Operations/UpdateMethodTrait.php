@@ -28,4 +28,4 @@ trait UpdateMethodTrait
             throw new \Exception('Invalid id provided.');
         }
         unset($body[static::getPrimaryKeyName()]);
-  
+        $path = Util::joinPath(static::getResour
