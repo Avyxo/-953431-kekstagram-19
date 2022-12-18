@@ -29,4 +29,5 @@ trait UpdateMethodTrait
         }
         unset($body[static::getPrimaryKeyName()]);
         $path = Util::joinPath(static::getResourcePath(), $id);
-        $client = sta
+        $client = static::getClient();
+        $response = $client->put($p
