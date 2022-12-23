@@ -32,4 +32,4 @@ trait UpdateMethodTrait
         $client = static::getClient();
         $response = $client->put($path, $body, $headers);
 
-     
+        return Util::convertToApiO
