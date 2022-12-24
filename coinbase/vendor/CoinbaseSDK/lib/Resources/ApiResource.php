@@ -79,3 +79,50 @@ class ApiResource extends \ArrayObject
     {
         unset($this->attributes[$key]);
     }
+
+    public function getAttributes()
+    {
+        $returnAttributes = [];
+
+        foreach ($this->attributes as $key => $attribute) {
+            $returnAttributes[$key] = $attribute instanceof \ArrayObject ? $attribute->getArrayCopy() : $attribute;
+        }
+
+        return $returnAttributes;
+    }
+
+    public function getAttribute($key)
+    {
+        $attribute = $this->__get($key);
+
+        return $attribute instanceof \ArrayObject ? $attribute->getArrayCopy() : $attribute;
+    }
+
+    public function getDirtyAttributes()
+    {
+        $dirtyAttributes = [];
+
+        foreach ($this->attributes as $key => $value) {
+            $value = $value instanceof \ArrayObject ? $value->getArrayCopy() : $value;
+
+            if (isset($this->initialData[$key])) {
+                $initialValue = $this->initialData[$key] instanceof \ArrayObject ? $this->initialData[$key]->getArrayCopy() : $this->initialData[$key];
+                if (!Util::equal($value, $initialValue)) {
+                    $dirtyAttributes[$key] = $value;
+                }
+            } else {
+                $dirtyAttributes[$key] = $value;
+            }
+        }
+
+        return $dirtyAttributes;
+    }
+
+    public function __toString()
+    {
+        return print_r($this->attributes, true);
+    }
+
+    public static function setClient($client)
+    {
+        self::$client = $client;
