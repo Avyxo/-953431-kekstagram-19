@@ -39,3 +39,43 @@ class ApiResource extends \ArrayObject
     {
         $this->attributes = [];
         $this->initialData = [];
+    }
+
+    public static function getPrimaryKeyName()
+    {
+        return 'id';
+    }
+
+    public static function getClassName()
+    {
+        return get_called_class();
+    }
+
+    public function getPrimaryKeyValue()
+    {
+        return isset($this->attributes[static::getPrimaryKeyName()]) ? $this->attributes[static::getPrimaryKeyName()] : null;
+    }
+
+    public function __set($key, $value)
+    {
+        if (\is_string($key)) {
+            $this->attributes[$key] = is_array($value) ? new \ArrayObject($value) : $value;
+        }
+    }
+
+    public function __get($key)
+    {
+        if (\is_string($key) && isset($this->attributes[$key])) {
+            return $this->attributes[$key];
+        }
+    }
+
+    public function __isset($key)
+    {
+        return isset($this->attributes[$key]);
+    }
+
+    public function __unset($key)
+    {
+        unset($this->attributes[$key]);
+    }
