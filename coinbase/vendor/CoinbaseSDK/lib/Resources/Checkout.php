@@ -1,2 +1,4 @@
 <?php
-namespace C
+namespace CoinbaseSDK\Resources;
+
+use CoinbaseSDK\Operati
