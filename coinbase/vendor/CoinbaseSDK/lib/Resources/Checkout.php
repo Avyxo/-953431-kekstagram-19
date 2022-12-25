@@ -1,4 +1,5 @@
 <?php
 namespace CoinbaseSDK\Resources;
 
-use CoinbaseSDK\Operati
+use CoinbaseSDK\Operations\CreateMethodTrait;
+use CoinbaseSDK\Opera
