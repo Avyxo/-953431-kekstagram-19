@@ -126,3 +126,49 @@ class ApiResource extends \ArrayObject
     public static function setClient($client)
     {
         self::$client = $client;
+    }
+
+    protected static function getClient()
+    {
+        if (self::$client) {
+            return self::$client;
+        }
+
+        return ApiClient::getInstance();
+    }
+
+    public function offsetGet($key)
+    {
+        return $this->__get($key);
+    }
+
+    public function offsetSet($key, $value)
+    {
+        null === $key ? array_push($this->attributes, $value) : $this->attributes[$key] = $value;
+    }
+
+    public function count()
+    {
+        return count($this->attributes);
+    }
+
+    public function asort()
+    {
+        asort($this->attributes);
+    }
+
+    public function ksort()
+    {
+        ksort($this->attributes);
+    }
+
+    public function offsetUnset($key)
+    {
+        unset($this->attributes[$key]);
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->attributes);
+    }
+}
