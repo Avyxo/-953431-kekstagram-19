@@ -5,4 +5,6 @@ use CoinbaseSDK\Operations\CreateMethodTrait;
 use CoinbaseSDK\Operations\DeleteMethodTrait;
 use CoinbaseSDK\Operations\ReadMethodTrait;
 use CoinbaseSDK\Operations\SaveMethodTrait;
-use CoinbaseSDK\Operations\Upd
+use CoinbaseSDK\Operations\UpdateMethodTrait;
+
+class Checkout extends ApiResour
