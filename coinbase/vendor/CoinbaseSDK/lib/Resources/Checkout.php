@@ -9,4 +9,4 @@ use CoinbaseSDK\Operations\UpdateMethodTrait;
 
 class Checkout extends ApiResource implements ResourcePathInterface
 {
-    use ReadMethodTrait, CreateMethodTrait, Up
+    use ReadMethodTrait, CreateMethodTrait, UpdateMethodTrait, DeleteMethodTrait,
