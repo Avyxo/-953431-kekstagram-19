@@ -12,4 +12,6 @@ class Checkout extends ApiResource implements ResourcePathInterface
     use ReadMethodTrait, CreateMethodTrait, UpdateMethodTrait, DeleteMethodTrait, SaveMethodTrait;
 
     /**
-     * @return s
+     * @return string
+     */
+    public static function g
