@@ -14,4 +14,6 @@ class Checkout extends ApiResource implements ResourcePathInterface
     /**
      * @return string
      */
-    public static function g
+    public static function getResourcePath()
+    {
+        return 'checkouts
