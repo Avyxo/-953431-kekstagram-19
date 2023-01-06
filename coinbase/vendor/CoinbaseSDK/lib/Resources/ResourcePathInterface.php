@@ -2,4 +2,6 @@
 
 namespace CoinbaseSDK\Resources;
 
-interface ResourcePath
+interface ResourcePathInterface
+{
+    public static function getResourcePath
