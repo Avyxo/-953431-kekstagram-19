@@ -1,3 +1,5 @@
 <?php
 
-n
+namespace CoinbaseSDK\Resources;
+
+interface ResourcePath
