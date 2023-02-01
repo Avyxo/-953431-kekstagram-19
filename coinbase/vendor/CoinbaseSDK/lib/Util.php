@@ -141,3 +141,5 @@ class Util
             }
         }
         return implode("&", $r);
+    }
+}
