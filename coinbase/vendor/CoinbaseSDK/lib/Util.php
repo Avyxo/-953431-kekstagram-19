@@ -98,3 +98,46 @@ class Util
     public static function hashEqual($str1, $str2)
     {
         if (function_exists('hash_equals')) {
+            return \hash_equals($str1, $str2);
+        }
+
+        if (strlen($str1) != strlen($str2)) {
+            return false;
+        } else {
+            $res = $str1 ^ $str2;
+            $ret = 0;
+
+            for ($i = strlen($res) - 1; $i >= 0; $i--) {
+                $ret |= ord($res[$i]);
+            }
+            return !$ret;
+        }
+    }
+
+    public static function urlEncode($arr, $prefix = null)
+    {
+        if (!is_array($arr)) {
+            return $arr;
+        }
+        $r = [];
+        foreach ($arr as $k => $v) {
+            if (is_null($v)) {
+                continue;
+            }
+            if ($prefix) {
+                if ($k !== null && (!is_int($k) || is_array($v))) {
+                    $k = $prefix."[".$k."]";
+                } else {
+                    $k = $prefix."[]";
+                }
+            }
+            if (is_array($v)) {
+                $enc = self::urlEncode($v, $k);
+                if ($enc) {
+                    $r[] = $enc;
+                }
+            } else {
+                $r[] = urlencode($k)."=".urlencode($v);
+            }
+        }
+        return implode("&", $r);
