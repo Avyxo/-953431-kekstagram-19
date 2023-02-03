@@ -8,4 +8,4 @@ use CoinbaseSDK\Util;
 
 class Webhook
 {
-    publi
+    public static function buildEvent($payload, $sigHea
