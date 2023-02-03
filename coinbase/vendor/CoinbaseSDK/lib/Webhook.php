@@ -2,4 +2,6 @@
 namespace CoinbaseSDK;
 
 use CoinbaseSDK\Exceptions\InvalidResponseException;
-use CoinbaseSDK\Exceptions\SignatureVerificationExcepti
+use CoinbaseSDK\Exceptions\SignatureVerificationException;
+use CoinbaseSDK\Resources\Event;
+use CoinbaseSD
