@@ -12,4 +12,6 @@ class Webhook
     {
         $data = null;
 
-        $data = \json_decode($payl
+        $data = \json_decode($payload, true);
+
+        if (json_last_
