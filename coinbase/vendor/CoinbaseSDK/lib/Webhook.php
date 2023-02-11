@@ -11,3 +11,5 @@ class Webhook
     public static function buildEvent($payload, $sigHeader, $secret)
     {
         $data = null;
+
+        $data = \json_decode($payl
