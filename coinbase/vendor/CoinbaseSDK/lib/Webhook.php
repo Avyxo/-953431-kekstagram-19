@@ -15,4 +15,4 @@ class Webhook
         $data = \json_decode($payload, true);
 
         if (json_last_error()) {
-            throw new InvalidResponseExcepti
+            throw new InvalidResponseException('Invalid payload provided. No JSON ob
