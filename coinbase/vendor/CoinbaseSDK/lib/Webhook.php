@@ -14,4 +14,5 @@ class Webhook
 
         $data = \json_decode($payload, true);
 
-        if (json_last_
+        if (json_last_error()) {
+            throw new InvalidResponseExcepti
