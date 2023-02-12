@@ -15,4 +15,7 @@ class Webhook
         $data = \json_decode($payload, true);
 
         if (json_last_error()) {
-            throw new InvalidResponseException('Invalid payload provided. No JSON object could be decoded.', $payloa
+            throw new InvalidResponseException('Invalid payload provided. No JSON object could be decoded.', $payload);
+        }
+
+        if (!isset($data['e
