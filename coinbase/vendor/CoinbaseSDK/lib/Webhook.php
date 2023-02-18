@@ -18,4 +18,5 @@ class Webhook
             throw new InvalidResponseException('Invalid payload provided. No JSON object could be decoded.', $payload);
         }
 
-        if (!isset($data['e
+        if (!isset($data['event'])) {
+            throw new InvalidResp
