@@ -20,3 +20,6 @@ class Webhook
 
         if (!isset($data['event'])) {
             throw new InvalidResponseException('Invalid payload provided.', $payload);
+        }
+
+        self::verifySignature($
