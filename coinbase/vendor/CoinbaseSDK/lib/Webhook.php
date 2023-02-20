@@ -22,4 +22,6 @@ class Webhook
             throw new InvalidResponseException('Invalid payload provided.', $payload);
         }
 
-        self::verifySignature($
+        self::verifySignature($payload, $sigHeader, $secret);
+
+        return 
