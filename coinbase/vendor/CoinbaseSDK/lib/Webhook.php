@@ -19,4 +19,4 @@ class Webhook
         }
 
         if (!isset($data['event'])) {
-            throw new InvalidResp
+            throw new InvalidResponseException('Invalid payload provided.', $payload);
