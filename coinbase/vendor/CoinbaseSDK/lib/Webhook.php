@@ -29,4 +29,6 @@ class Webhook
 
     public static function verifySignature($payload, $sigHeader, $secret)
     {
-        $computedSignature = \
+        $computedSignature = \hash_hmac('sha256', $payload, $secret);
+
+        i
