@@ -24,4 +24,7 @@ class Webhook
 
         self::verifySignature($payload, $sigHeader, $secret);
 
-        return 
+        return new Event($data['event']);
+    }
+
+    public stat
