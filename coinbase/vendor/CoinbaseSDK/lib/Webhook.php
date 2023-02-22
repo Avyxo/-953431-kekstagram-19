@@ -27,4 +27,4 @@ class Webhook
         return new Event($data['event']);
     }
 
-    public stat
+    public static function verifySignature($payload, $si
