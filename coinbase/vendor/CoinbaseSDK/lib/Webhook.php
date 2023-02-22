@@ -27,4 +27,6 @@ class Webhook
         return new Event($data['event']);
     }
 
-    public static function verifySignature($payload, $si
+    public static function verifySignature($payload, $sigHeader, $secret)
+    {
+        $computedSignature = \
