@@ -31,4 +31,4 @@ class Webhook
     {
         $computedSignature = \hash_hmac('sha256', $payload, $secret);
 
-        i
+        if (!Util::hashEqual($sigHeader, $computedSignatu
