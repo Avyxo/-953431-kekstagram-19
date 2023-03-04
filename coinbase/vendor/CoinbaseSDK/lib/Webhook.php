@@ -32,4 +32,7 @@ class Webhook
         $computedSignature = \hash_hmac('sha256', $payload, $secret);
 
         if (!Util::hashEqual($sigHeader, $computedSignature)) {
-            throw new SignatureVerificationExcept
+            throw new SignatureVerificationException($computedSignature, $payload);
+        }
+    }
+}
