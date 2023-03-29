@@ -1,2 +1,3 @@
 <style>
-	p.p
+	p.payment_module a.coinbase:after {
+		displa
