@@ -1,3 +1,5 @@
 <style>
 	p.payment_module a.coinbase:after {
-		displa
+		display: block;
+		content: "\f054";
+		position: 
