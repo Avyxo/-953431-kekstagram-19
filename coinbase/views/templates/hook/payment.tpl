@@ -6,4 +6,8 @@
 		right: 15px;
 		margin-top: -11px;
 		top: 50%;
-		font-family: "FontAwe
+		font-family: "FontAwesome";
+		font-size: 25px;
+		height: 22px;
+		width: 14px;
+		colo
