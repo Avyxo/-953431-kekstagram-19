@@ -14,4 +14,5 @@
 	}
 </style>
 
-<p class="payment_module
+<p class="payment_module">
+	<a class="coinbase" href="{$
