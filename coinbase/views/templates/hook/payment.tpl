@@ -10,4 +10,8 @@
 		font-size: 25px;
 		height: 22px;
 		width: 14px;
-		colo
+		color: #777;
+	}
+</style>
+
+<p class="payment_module
