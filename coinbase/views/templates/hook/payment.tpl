@@ -15,4 +15,5 @@
 </style>
 
 <p class="payment_module">
-	<a class="coinbase" href="{$link->getModuleLink('coinbase', 'process', [], true)|escape:'html'}" title="{l s='Pay b
+	<a class="coinbase" href="{$link->getModuleLink('coinbase', 'process', [], true)|escape:'html'}" title="{l s='Pay by Coinbase Commerce' mod='coinbase'}">
+		{l s='Pay b
