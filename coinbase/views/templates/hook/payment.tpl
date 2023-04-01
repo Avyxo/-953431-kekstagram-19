@@ -15,4 +15,4 @@
 </style>
 
 <p class="payment_module">
-	<a class="coinbase" href="{$
+	<a class="coinbase" href="{$link->getModuleLink('coinbase', 'process',
